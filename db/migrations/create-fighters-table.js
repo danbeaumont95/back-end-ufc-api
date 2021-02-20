@@ -9,6 +9,7 @@ exports.up = function(knex) {
         fightersTable.string('dob');
         fightersTable.string('champ_status');
         fightersTable.string('next_fight');
+        fightersTable.string('img_url')
     })
 }
 
