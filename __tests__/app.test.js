@@ -1,5 +1,8 @@
+
 const { expect } = require('@jest/globals')
+const { exp } = require('prelude-ls')
 const request = require('supertest')
+
 
 const app = require('../app')
 const connection = require('../db/connection')
@@ -230,3 +233,42 @@ describe('/api/staff/:full_name', () => {
         })
     })
 })
+
+describe('/api/events', () => {
+    test('GET:200 responds with correct status code', () => {
+        return request(app)
+        .get('/api/events')
+        .expect(200)
+    })
+    test('GET:200 responds with array of all events', () => {
+        return request(app)
+        .get('/api/events')
+        .expect(200)
+        .then(({ body }) => {
+            expect(body.events).toHaveLength(3)
+            expect(body.events[0]).toEqual(expect.objectContaining({
+                event: expect.any(String),
+                location: expect.any(String),
+                date: expect.any(String),
+                main_event: expect.any(String),
+                co_main_event: expect.any(String),
+                fight_three: expect.any(String),
+                fight_four: expect.any(String)
+            }))
+        })
+    })
+})
+
+/*
+expect(body.fighters[0]).toEqual(expect.objectContaining({
+                first_name: expect.any(String),
+                surname: expect.any(String),
+                full_name: expect.any(String),
+                weight: expect.any(String),
+                age: expect.any(Number),
+                dob: expect.any(String),
+                champ_status: expect.any(String),
+                next_fight: expect.any(String),
+                img_url: expect.any(String)
+            }))
+*/
