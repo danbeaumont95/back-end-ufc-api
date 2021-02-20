@@ -7,6 +7,7 @@ exports.up = function(knex) {
         staffTable.integer('age');
         staffTable.string('role');
         staffTable.integer('years_at_company');
+        staffTable.string('img_url')
     })
 }
 
