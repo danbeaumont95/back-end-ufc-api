@@ -1,0 +1,22 @@
+{
+    "/api": {
+        "/": {
+            "GET": "List of all routes"
+        },
+        "/fighters": {
+            "/": {
+                "GET": "Object of array of objects showing all fighters on database"
+            },
+            "/:full_name": {
+                "GET": "Object showing all details of fighter"
+            },
+            "/weight/:weight": {
+                "GET": "Object of array of objects showing all fighters of certain weight class"
+            },
+            "/champions/:champ_status": {
+                "GET": "Object of array of objects showing all champions"
+            }
+        }
+      
+    }
+}
