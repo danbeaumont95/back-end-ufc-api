@@ -1,4 +1,4 @@
-const { fightersData, staffData, eventsData } = require('../data/index')
+const { fightersData, staffData, eventsData, weightData } = require('../data/index')
 
 exports.seed = function (knex) {
     return knex.migrate
@@ -14,5 +14,8 @@ exports.seed = function (knex) {
     })
     .then(() => {
         return knex('events').insert(eventsData)
+    })
+    .then(() => {
+        return knex('weights').insert(weightData)
     })
 }

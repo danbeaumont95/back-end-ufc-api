@@ -272,3 +272,22 @@ expect(body.fighters[0]).toEqual(expect.objectContaining({
                 img_url: expect.any(String)
             }))
 */
+
+describe('/api/weight', () => {
+    test('GET:200 responds with correct status code', () => {
+        return request(app)
+        .get('/api/weights')
+        .expect(200)
+    })
+    test('GET:200 responds with array of all weight classes', () => {
+        return request(app)
+        .get('/api/weights')
+        .expect(200)
+        .then(({ body }) => {
+            expect(body.weights).toHaveLength(2)
+            expect(body.weights[0]).toEqual(expect.objectContaining({
+                weights: expect.any(String),
+            }))
+        })
+    })
+})
