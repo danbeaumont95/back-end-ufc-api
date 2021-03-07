@@ -1,0 +1,4 @@
+{
+    "description": "Welcome to my UFC back-end API, please follow the link below to access JSON object containing all of the available endpoints",
+    "apiPath": "https://backend-ufc-api.herokuapp.com/api"
+}

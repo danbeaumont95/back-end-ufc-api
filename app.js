@@ -1,12 +1,15 @@
-const express = require('express')
-const app = express()
-const apiRouter = require('./routers/api.router')
-const cors = require('cors')
+const express = require("express");
+const app = express();
+const homepageRouter = require("./routers/homepage.router");
+const apiRouter = require("./routers/api.router");
+const cors = require("cors");
 
-app.use(cors())
+app.use(cors());
 
-app.use(express.json())
+app.use(express.json());
 
-app.use('/api', apiRouter);
+app.use("/", homepageRouter);
+
+app.use("/api", apiRouter);
 
 module.exports = app;
