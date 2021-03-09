@@ -1,18 +1,21 @@
-const apiRouter = require('express').Router();
-const { getAllRoutes } = require('../controllers/api.controllers');
-const fightersRouter = require('./fighters.router');
-const staffRouter = require('./staff.router')
-const eventsRouter = require('./events.router')
-const weightRouter = require('./weight.router')
+const apiRouter = require("express").Router();
+const { getAllRoutes } = require("../controllers/api.controllers");
+const fightersRouter = require("./fighters.router");
+const staffRouter = require("./staff.router");
+const eventsRouter = require("./events.router");
+const weightRouter = require("./weight.router");
+const storeRouter = require("./store.router");
 
-apiRouter.route('/').get(getAllRoutes)
+apiRouter.route("/").get(getAllRoutes);
 
-apiRouter.use('/fighters', fightersRouter)
+apiRouter.use("/fighters", fightersRouter);
 
-apiRouter.use('/staff', staffRouter)
+apiRouter.use("/staff", staffRouter);
 
-apiRouter.use('/events', eventsRouter)
+apiRouter.use("/events", eventsRouter);
 
-apiRouter.use('/weights', weightRouter)
+apiRouter.use("/weights", weightRouter);
+
+apiRouter.use("/store", storeRouter);
 
 module.exports = apiRouter;

@@ -312,3 +312,26 @@ describe("/api/weights", () => {
       });
   });
 });
+
+describe("/api/store", () => {
+  test("GET:200 responds with correct status code", () => {
+    return request(app).get("/api/store").expect(200);
+  });
+  test("GET:200 responds with all items in store", () => {
+    return request(app)
+      .get("/api/store")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.items).toHaveLength(3);
+        expect(body.items[0]).toEqual(
+          expect.objectContaining({
+            item_name: expect.any(String),
+            price: expect.any(Number),
+            description: expect.any(String),
+            sizes: expect.any(String),
+            img_url: expect.any(String),
+          })
+        );
+      });
+  });
+});
