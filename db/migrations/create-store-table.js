@@ -6,6 +6,7 @@ exports.up = function (knex) {
     storeTable.string("description");
     storeTable.string("sizes");
     storeTable.string("img_url");
+    storeTable.string("type");
   });
 };
 

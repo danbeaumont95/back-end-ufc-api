@@ -330,6 +330,49 @@ describe("/api/store", () => {
             description: expect.any(String),
             sizes: expect.any(String),
             img_url: expect.any(String),
+            type: expect.any(String),
+          })
+        );
+      });
+  });
+});
+
+describe("/api/store/:type", () => {
+  test("GET:200 responds with correct status code", () => {
+    return request(app).get("/api/store/Gaming").expect(200);
+  });
+  test("GET:200 responds with all items of passed type gaming", () => {
+    return request(app)
+      .get("/api/store/Gaming")
+      .expect(200)
+      .then(({ body }) => {
+        console.log(body.items);
+        expect(body.items).toEqual(
+          expect.objectContaining({
+            item_name: expect.any(String),
+            price: expect.any(Number),
+            description: expect.any(String),
+            sizes: expect.any(String),
+            img_url: expect.any(String),
+            type: expect.any(String),
+          })
+        );
+      });
+  });
+  test("GET:200 responds with all items of passed type Clothing", () => {
+    return request(app)
+      .get("/api/store/Clothing")
+      .expect(200)
+      .then(({ body }) => {
+        console.log(body.items);
+        expect(body.items).toEqual(
+          expect.objectContaining({
+            item_name: expect.any(String),
+            price: expect.any(Number),
+            description: expect.any(String),
+            sizes: expect.any(String),
+            img_url: expect.any(String),
+            type: expect.any(String),
           })
         );
       });

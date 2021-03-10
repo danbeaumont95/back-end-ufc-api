@@ -7,6 +7,7 @@ module.exports = [
     sizes: "Small, Medium, Large",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGMS0076_A_720x.jpg?v=1607108658",
+    type: "Clothing",
   },
   {
     item_name: "UFC 5th Round Champion Snapback Flex Cap",
@@ -16,6 +17,7 @@ module.exports = [
     sizes: "Small, Medium, Large",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/101030184-UFC5th-Round-Champion-Snapback-Flex-Cap-blk_B_900x.jpg?v=1614801167",
+    type: "Accessories",
   },
   {
     item_name: "EA SPORTS UFC 4 PS4",
@@ -25,5 +27,6 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/101030184-UFC5th-Round-Champion-Snapback-Flex-Cap-blk_B_900x.jpg?v=1614801167",
+    type: "Gaming",
   },
 ];

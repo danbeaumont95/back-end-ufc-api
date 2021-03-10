@@ -7,6 +7,7 @@ module.exports = [
     sizes: "Small, Medium, Large",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGMS0076_A_720x.jpg?v=1607108658",
+    type: "Clothing",
   },
   {
     item_name: "UFC 5th Round Champion Snapback Flex Cap",
@@ -16,6 +17,7 @@ module.exports = [
     sizes: "Small, Medium, Large",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/101030184-UFC5th-Round-Champion-Snapback-Flex-Cap-blk_B_900x.jpg?v=1614801167",
+    type: "Accessories",
   },
   {
     item_name: "EA SPORTS UFC 4 PS4",
@@ -25,6 +27,7 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGNV800000_720x.jpg?v=1597067809",
+    type: "Gaming",
   },
   {
     item_name: "Conor McGregor Autographed and Framed Glove Shadowbox",
@@ -34,6 +37,7 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCMEQ009500-A_15d7ffc0-d26f-4539-8a4d-bc17fb8ee356_720x.jpg?v=1614357647",
+    type: "Collectables",
   },
   {
     item_name: "UFC 257 Autographed Event Poster",
@@ -43,6 +47,7 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCMCL0277_900x.jpg?v=1613482227",
+    type: "Collectables",
   },
   {
     item_name: "BMF Replica Belt",
@@ -52,6 +57,7 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGCL0019_B_720x.jpg?v=1572641596",
+    type: "Collectables",
   },
   {
     item_name: "UFC Camp Mug",
@@ -60,6 +66,7 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGBV001000_A_900x.jpg?v=1608325381",
+    type: "Accessories",
   },
   {
     item_name:
@@ -70,5 +77,6 @@ module.exports = [
     sizes: "NA",
     img_url:
       "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCFNV0005_900x.jpg?v=1553271369",
+    type: "Collectables",
   },
 ];
