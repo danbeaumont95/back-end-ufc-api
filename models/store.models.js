@@ -9,7 +9,8 @@ exports.selectItemByType = (type) => {
     .select("*")
     .from("store")
     .where({ type })
-    .then(([items]) => {
+    .then((items) => {
+      console.log(items);
       if (!items) return Promise.reject({ status: 404, msg: "Type not found" });
       return items;
     });

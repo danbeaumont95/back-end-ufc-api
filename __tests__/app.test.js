@@ -346,8 +346,7 @@ describe("/api/store/:type", () => {
       .get("/api/store/Gaming")
       .expect(200)
       .then(({ body }) => {
-        console.log(body.items);
-        expect(body.items).toEqual(
+        expect(body.items[0]).toEqual(
           expect.objectContaining({
             item_name: expect.any(String),
             price: expect.any(Number),
@@ -364,8 +363,7 @@ describe("/api/store/:type", () => {
       .get("/api/store/Clothing")
       .expect(200)
       .then(({ body }) => {
-        console.log(body.items);
-        expect(body.items).toEqual(
+        expect(body.items[0]).toEqual(
           expect.objectContaining({
             item_name: expect.any(String),
             price: expect.any(Number),
