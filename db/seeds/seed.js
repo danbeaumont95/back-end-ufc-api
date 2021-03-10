@@ -4,6 +4,7 @@ const {
   eventsData,
   weightData,
   storeData,
+  typesData,
 } = require("../data/index");
 
 exports.seed = function (knex) {
@@ -26,5 +27,8 @@ exports.seed = function (knex) {
     })
     .then(() => {
       return knex("store").insert(storeData);
+    })
+    .then(() => {
+      return knex("types").insert(typesData);
     });
 };

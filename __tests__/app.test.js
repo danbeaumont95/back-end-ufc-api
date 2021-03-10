@@ -376,3 +376,22 @@ describe("/api/store/:type", () => {
       });
   });
 });
+
+describe("/api/types", () => {
+  test("GET:200 responds with correct status code", () => {
+    return request(app).get("/api/types").expect(200);
+  });
+  test("GET:200 responds with all types", () => {
+    return request(app)
+      .get("/api/types")
+      .expect(200)
+      .then(({ body: { type } }) => {
+        expect(type).toHaveLength(2);
+        expect(type[0]).toEqual(
+          expect.objectContaining({
+            type: expect.any(String),
+          })
+        );
+      });
+  });
+});
