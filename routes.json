@@ -169,7 +169,7 @@
         ]
     }
     },
-    "GET /api/weight": {
+    "GET /api/weights": {
         "description": "Returns all weight classes",
         "example response": {
             "weights": [
@@ -181,5 +181,43 @@
             }
         ]
     }
+    },
+    "GET /api/store": {
+        "description": "Returns all items in store",
+        "example response": {
+            "items": [
+                {
+                "item_name": "UFC Unisex Hoodie with Built-In Face Cover - Black",
+                "price": 85,
+                "description": "The UFC custom PFD garment-dyed unisex pullover hoodie combines a built-in, loose-fitting tubular cowl jersey blend fabric sewn into the collar at the seam that doubles as a stylish face covering as needed.",
+                "sizes": "Small, Medium, Large",
+                "img_url": "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGMS0076_A_720x.jpg?v=1607108658",
+                "type": "Clothing"
+                }
+            ]
+        }
+    },
+    "GET /api/store/:type": {
+        "description": "Returns all items of certain type in store",
+        "example response": {
+            "items": [
+            {
+            "item_name": "UFC 5th Round Champion Snapback Flex Cap",
+            "price": 35,
+            "description": "Be a champion in your everyday life. We are bigger than the Octagon. We champion Champions. The Championship Gold Collection celebrates all of us.",
+            "sizes": "Small, Medium, Large",
+            "img_url": "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/101030184-UFC5th-Round-Champion-Snapback-Flex-Cap-blk_B_900x.jpg?v=1614801167",
+            "type": "Accessories"
+            },
+            {
+            "item_name": "UFC Camp Mug",
+            "price": 15,
+            "description": "Double wall stainless seteel is perfect for morning coffee.",
+            "sizes": "NA",
+            "img_url": "https://cdn.shopify.com/s/files/1/0035/4274/5152/products/UFCGBV001000_A_900x.jpg?v=1608325381",
+            "type": "Accessories"
+            }
+            ]
+            }
     }
 }
