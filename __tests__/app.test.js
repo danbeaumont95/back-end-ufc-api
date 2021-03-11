@@ -68,6 +68,54 @@ describe("/api/fighters", () => {
         );
       });
   });
+  test("POST:201 responds with correct status code", () => {
+    const input = {
+      first_name: "Leon",
+      surname: "Edwards",
+      full_name: "LeonEdwards",
+      weight: "Welterweight",
+      age: 29,
+      dob: "18/07/1991",
+      champ_status: "NA",
+      next_fight: "Belal Muhammed",
+      img_url:
+        "https://img.bleacherreport.net/img/images/photos/003/869/668/hi-res-12f1daf6b3f44792ca1bf721a87633e0_crop_north.jpg?1590248758&w=3072&h=2048",
+    };
+    return request(app).post("/api/fighters").send(input).expect(201);
+  });
+  test("POST:201 adds new fighter to fighters table", () => {
+    const input = {
+      first_name: "Leon",
+      surname: "Edwards",
+      full_name: "LeonEdwards",
+      weight: "Welterweight",
+      age: 29,
+      dob: "18/07/1991",
+      champ_status: "NA",
+      next_fight: "Belal Muhammed",
+      img_url:
+        "https://img.bleacherreport.net/img/images/photos/003/869/668/hi-res-12f1daf6b3f44792ca1bf721a87633e0_crop_north.jpg?1590248758&w=3072&h=2048",
+    };
+    const expected = {
+      first_name: "Leon",
+      surname: "Edwards",
+      full_name: "LeonEdwards",
+      weight: "Welterweight",
+      age: 29,
+      dob: "18/07/1991",
+      champ_status: "NA",
+      next_fight: "Belal Muhammed",
+      img_url:
+        "https://img.bleacherreport.net/img/images/photos/003/869/668/hi-res-12f1daf6b3f44792ca1bf721a87633e0_crop_north.jpg?1590248758&w=3072&h=2048",
+    };
+    return request(app)
+      .post("/api/fighters")
+      .send(input)
+      .expect(201)
+      .then(({ body }) => {
+        expect(body.fighter).toEqual(expected);
+      });
+  });
 });
 
 describe("/api/fighters/:full_name", () => {
