@@ -25,6 +25,17 @@ exports.selectFightersByFullName = (full_name) => {
     });
 };
 
+exports.deleteFightersByFullName = (full_name, first_name) => {
+  return connection("fighters")
+    .delete()
+    .where({ full_name, first_name })
+    .then((count) => {
+      if (count === 0) {
+        throw { status: 404, msg: "No fighter found" };
+      }
+    });
+};
+
 exports.selectFightersByWeight = (weight) => {
   return connection
     .select("*")

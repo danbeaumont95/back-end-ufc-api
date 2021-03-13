@@ -2,6 +2,7 @@ const {
   selectAllFighters,
   addNewFighter,
   selectFightersByFullName,
+  deleteFightersByFullName,
   selectFightersByWeight,
   selectChampions,
 } = require("../models/fighters.models");
@@ -29,6 +30,16 @@ exports.getFightersByFullName = (req, res, next) => {
   selectFightersByFullName(full_name)
     .then((fighter) => {
       res.send({ fighter });
+    })
+    .catch(next);
+};
+
+exports.removeFightersByFullName = (req, res, next) => {
+  const { full_name } = req.params;
+  const { first_name } = req.body;
+  deleteFightersByFullName(full_name, first_name)
+    .then(() => {
+      res.sendStatus(200);
     })
     .catch(next);
 };

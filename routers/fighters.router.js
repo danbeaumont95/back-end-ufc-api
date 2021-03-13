@@ -4,6 +4,7 @@ const {
   getAllFighters,
   postNewFighter,
   getFightersByFullName,
+  removeFightersByFullName,
   getFightersByWeight,
   getChampions,
 } = require("../controllers/fighters.controllers");
@@ -14,7 +15,10 @@ fightersRouter
   .get(getAllFighters)
   .post(postNewFighter)
   .all(methodNotFound);
-fightersRouter.route("/:full_name").get(getFightersByFullName);
+fightersRouter
+  .route("/:full_name")
+  .get(getFightersByFullName)
+  .delete(removeFightersByFullName);
 fightersRouter.route("/weight/:weight").get(getFightersByWeight);
 fightersRouter.route("/champions/:champ_status").get(getChampions);
 
