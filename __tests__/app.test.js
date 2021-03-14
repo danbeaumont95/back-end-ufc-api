@@ -166,21 +166,25 @@ describe("/api/fighters/:full_name", () => {
   });
   test("DELETE:200 responds with correct status code", () => {
     const input = { first_name: "Jorge" };
-    return request(app)
-      .delete("/api/fighters/JorgeMasvidal")
-      .send(input)
-      .expect(200);
+    return (
+      request(app)
+        .delete("/api/fighters/JorgeMasvidal")
+        // .send(input)
+        .expect(200)
+    );
   });
   test("DELETE:200 responds with correct error code if passed false full_name", () => {
     const input = { first_name: "Jorge" };
-    return request(app)
-      .delete("/api/fighters/invalidFighterName")
-      .send(input)
-      .expect(404)
-      .then(({ body }) => {
-        console.log(body, "body");
-        expect(body.msg).toBe("No fighter found");
-      });
+    return (
+      request(app)
+        .delete("/api/fighters/invalidFighterName")
+        // .send(input)
+        .expect(404)
+        .then(({ body }) => {
+          console.log(body, "body");
+          expect(body.msg).toBe("No fighter found");
+        })
+    );
   });
 });
 

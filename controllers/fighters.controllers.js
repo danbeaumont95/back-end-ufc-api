@@ -36,8 +36,8 @@ exports.getFightersByFullName = (req, res, next) => {
 
 exports.removeFightersByFullName = (req, res, next) => {
   const { full_name } = req.params;
-  const { first_name } = req.body;
-  deleteFightersByFullName(full_name, first_name)
+  // const { first_name } = req.body;
+  deleteFightersByFullName(full_name)
     .then(() => {
       res.sendStatus(200);
     })

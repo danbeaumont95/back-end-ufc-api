@@ -25,10 +25,10 @@ exports.selectFightersByFullName = (full_name) => {
     });
 };
 
-exports.deleteFightersByFullName = (full_name, first_name) => {
+exports.deleteFightersByFullName = (full_name) => {
   return connection("fighters")
     .delete()
-    .where({ full_name, first_name })
+    .where({ full_name })
     .then((count) => {
       if (count === 0) {
         throw { status: 404, msg: "No fighter found" };
